@@ -11,19 +11,21 @@ var tile3 = preload("res://Assets/tile3.png")
 #var tile9 = preload("res://Assets/tile9.png")
 #var tile10 = preload("res://Assets/tile10.png")
 
-var health = int(get_parent().name)
+onready var modifier = str(get_parent().name)
+onready var health = int(get_parent().name)
+
 var score = 0
 
-onready var sprite = get_node("Sprite")
+func _ready():
+	$Sprite.set_texture(load("res://assets/" + "tile"+modifier + ".png"))
+
+
 func applyTexture():
-    
-    pass
+	pass
 
 func healthCheck():
-    sprite.set_texture("tile"+(get_parent().name))
-    pass
+	$Sprite.set_texture(load("res://assets/" + "tile"+modifier + ".png"))
+	pass
     
-func _ready():
-    sprite.set_texture("tile"+(get_parent().name))
     
     
